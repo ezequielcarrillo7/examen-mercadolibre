@@ -1,9 +1,14 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import {Link} from 'react-router-dom'
+
+
 import './Header.css'
 
 import HeaderLogo from '../assets/Logo_ML.png'
 import Lupa from '../assets/ic_Search.png'
+
+import ItemList from './ItemList'
 
 const ContenedorHeader = styled.header`
     width:100%;
@@ -73,16 +78,21 @@ const BotonBusqueda = styled.button`
 `
 
 const Header = () => {
-    return ( 
-        <ContenedorHeader>
-            <ContenedorLogo>
-                    <a href="/"><img src={HeaderLogo} alt="Mercado Libre" /></a>
-            </ContenedorLogo>
-            <ContenedorBusqueda>
-                    <InputSearch type="text" placeholder="Nunca dejes de buscar"/>                
-            </ContenedorBusqueda>
-            <BotonBusqueda><img src={Lupa} alt="Click para buscar"/></BotonBusqueda>
-        </ContenedorHeader>
+    return (
+        <div>
+            <ContenedorHeader>
+                <ContenedorLogo>
+                        <Link to="/"><img src={HeaderLogo} alt="Mercado Libre" /></Link>
+                </ContenedorLogo>
+                <ContenedorBusqueda>
+                        <InputSearch type="text" placeholder="Nunca dejes de buscar"/>                
+                </ContenedorBusqueda>
+                <BotonBusqueda><img src={Lupa} alt="Click para buscar"/></BotonBusqueda>
+            </ContenedorHeader>
+            <ItemList></ItemList>
+        </div>
+
+        
         
      );
 }

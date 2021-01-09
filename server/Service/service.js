@@ -25,7 +25,8 @@ exports.getListItem = query => {
                     },
                     picture: item.thumbnail,
                     condition: item.condition,
-                    free_shipping: item.shipping.free_shipping
+                    free_shipping: item.shipping.free_shipping,
+                    adress: item.address.state_name
                 }
             })
             
