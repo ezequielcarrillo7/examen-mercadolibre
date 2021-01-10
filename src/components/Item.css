@@ -58,11 +58,16 @@
 .p-location{
     color: #a3a3a3;
     font-size: 12px;
+    float: right;
+    margin-top:5rem;
+    margin-right: 5rem;
+    text-align: justify;
+    
 }
 
 .div-location{
-    margin-left: 550px;
-    margin-top: 50px;
+    flex-grow: 1;
+    
 }
 
 .div-container{

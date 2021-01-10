@@ -3,43 +3,19 @@ import styled from '@emotion/styled'
 import Item from './Item'
 
 
-const ContenedorItem = styled.div`
-    background-color: #ffffff;
-    width: 82rem;
-    height: 210px;
-    margin: 0 auto;
-    margin-top: 1px
-`;
-
 const ContenedorLista = styled.div`
     margin: 46px auto;
     display:flex;
-    flex-direction:column;
-    
+    flex-direction:column;  
 `;
 
 
-const ItemList = () => {
+const ItemList = ({list}) => {
+
     return (
         <ContenedorLista>
-            <ContenedorItem>
-                <Item></Item>     
-            </ContenedorItem>
-            <ContenedorItem>
-                <Item></Item>     
-            </ContenedorItem>
-            <ContenedorItem>
-                <Item></Item>     
-            </ContenedorItem>
-            <ContenedorItem>
-                <Item></Item>     
-            </ContenedorItem>
-            <ContenedorItem>
-                <Item></Item>     
-            </ContenedorItem>           
+            {list.slice(0,4).map((item) => <Item data={item} key={item.id}/>)}
         </ContenedorLista>
-
-        
      );
 }
  

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from '@emotion/styled'
 import {Link} from 'react-router-dom'
 
@@ -8,7 +8,7 @@ import './Header.css'
 import HeaderLogo from '../assets/Logo_ML.png'
 import Lupa from '../assets/ic_Search.png'
 
-import ItemList from './ItemList'
+
 
 const ContenedorHeader = styled.header`
     width:100%;
@@ -20,7 +20,7 @@ const ContenedorHeader = styled.header`
 
 `;
 
-const ContenedorBusqueda = styled.form`
+const FormBusqueda = styled.form`
     justify-content: space-between;
     width:60%;
 
@@ -77,19 +77,32 @@ const BotonBusqueda = styled.button`
 
 `
 
-const Header = () => {
+const Header = (props) => {
+
+    const [searchText, setSearchText] = useState('');
+
+    const handleChange = e => {
+        setSearchText(e.target.value)
+    }
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        props.onSubmit(searchText);
+    }
+
     return (
+
         <div>
             <ContenedorHeader>
                 <ContenedorLogo>
                         <Link to="/"><img src={HeaderLogo} alt="Mercado Libre" /></Link>
                 </ContenedorLogo>
-                <ContenedorBusqueda>
-                        <InputSearch type="text" placeholder="Nunca dejes de buscar"/>                
-                </ContenedorBusqueda>
-                <BotonBusqueda><img src={Lupa} alt="Click para buscar"/></BotonBusqueda>
+                <FormBusqueda id='form-search' onSubmit={e => handleSubmit(e)}>
+                        <InputSearch type="text" placeholder="Nunca dejes de buscar" onKeyUp={e => handleChange(e)}/>                
+                </FormBusqueda>
+                <BotonBusqueda type='submit' form='form-search'><img src={Lupa} alt="Click para buscar"/></BotonBusqueda>
             </ContenedorHeader>
-            <ItemList></ItemList>
+            
         </div>
 
         
