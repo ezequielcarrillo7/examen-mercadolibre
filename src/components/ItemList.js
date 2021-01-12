@@ -1,21 +1,26 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import styled from '@emotion/styled'
 import Item from './Item'
+import './ItemList.css'
 
 
 const ContenedorLista = styled.div`
-    margin: 46px auto;
+    margin: 0 auto;
     display:flex;
     flex-direction:column;  
 `;
 
 
-const ItemList = ({list}) => {
+const ItemList = ({list, categories}) => {
 
     return (
-        <ContenedorLista>
-            {list.slice(0,4).map((item) => <Item data={item} key={item.id}/>)}
-        </ContenedorLista>
+        <Fragment>
+            <div className='div-breadcrumb'>{categories.map((category, index) => <p className='p-breadcrumb' key={index}>{category}</p>)}</div>
+            <ContenedorLista>
+                {list.slice(0,4).map((item) => <Item data={item} key={item.id}/>)}
+            </ContenedorLista>
+        </Fragment>
+
      );
 }
  

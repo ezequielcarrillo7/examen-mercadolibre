@@ -1,0 +1,22 @@
+.div-breadcrumb{
+    margin: 0 auto;
+    display: flex;
+    padding: 0px;
+    width: 82rem;
+    flex-wrap: wrap;
+    gap: 0px;
+}
+
+.p-breadcrumb{
+    color:#3333336b;
+    font-size: 14px;
+}
+
+.p-breadcrumb:not(:last-of-type)::after {
+    content: '>';
+    margin: 0 10px;    
+}
+
+.p-breadcrumb:last-of-type {
+    font-weight: bold; 
+}

@@ -20,6 +20,7 @@ const ContenedorItem = styled.div`
 `;
 
 const Item = ({data}) => {
+    
     return (
         <ContenedorItem>
             <div className='div-container'>

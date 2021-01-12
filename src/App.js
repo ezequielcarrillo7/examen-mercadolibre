@@ -1,5 +1,6 @@
 import Header from './components/Header'
 import ItemList from './components/ItemList'
+import Detail from './components/Detail'
 
 import {Route, useHistory, Switch} from 'react-router-dom';
 
@@ -22,6 +23,7 @@ function App() {
         }else{
           setSearchResults(response)
           console.log(response.items)
+          console.log(response.categories)
           history.push(`/items?search=${searchText}`)
         }
       })
@@ -32,8 +34,9 @@ function App() {
       <div className="App">
         <Header onSubmit={searchText => getItems(searchText)}/>
         {
-          <Switch><Route path="/items" exact><ItemList list={searchResults.items}/></Route></Switch>
+          <Switch><Route path="/items" exact><ItemList categories={searchResults.categories} list={searchResults.items}/></Route></Switch>
         }
+        <Detail></Detail>
       </div>
     </Route>
   );
