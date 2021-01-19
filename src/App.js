@@ -36,7 +36,7 @@ function App() {
         {
           <Switch><Route path="/items" exact><ItemList categories={searchResults.categories} list={searchResults.items}/></Route></Switch>
         }
-        <Detail></Detail>
+        {/* <Detail></Detail> */}
       </div>
     </Route>
   );
