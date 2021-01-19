@@ -3,31 +3,70 @@
     margin: 46px auto;
     background-color: #ffffff;
     width: 82rem;
-    height: 82rem;
+    height: 56rem;
+    margin-bottom: 0;
 }
+
+.div-description{
+    display: block;
+    margin: 0 auto;
+    margin-top: -35px;
+    background-color: #ffffff;
+    width: 82rem;
+    height: 30rem;
+
+}
+
+.h1-description{
+    margin: 0px;
+    font-size: 28px;
+    font-family: Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+.div-description-title{
+    margin:32px;
+}
+
+.div-description-text{
+    margin:32px;   
+}
+
+.div-description-text > p{
+    color: #0a0a0a6b;
+}
+
+
 
 .img-foto{
     height: 680px;
     width: 680px;
 }
 
+.div-foto{
+    margin: 32px 64px;
+}
+
 .div-title{
     display: flex;
-    /* background-color: red; */
+    margin-right: 32px;
+    margin-top: 32px;
     width: 100%;
     height: 25%;
+    flex-direction: column;
+    padding-left: 10%;
+    
 }
 
 .btn-comprar{
-    width: 40%;
-    height: 15%;
-    margin: 280px auto;
-    margin-right: 32px;
+    width: 60%;
+    height: 48px;
     border-radius: 5px;
     border: none;
     background-color: rgb(52, 131, 250);
     color: #ffffff;
     font-size: 14px;
+    align-self: flex-end;
 }
 
 .btn-comprar:focus { outline: none; }
@@ -36,3 +75,28 @@
     cursor: pointer;
     background-color: rgb(45, 108, 202);
  }
+
+ .h2-price{
+     font-size: 46px;
+     font-weight: lighter;
+     margin-top: 0;
+     margin-bottom: 32px;
+ }
+
+ .p-condicion{
+     margin: 0;
+     font-size: 14px;
+ }
+
+ .h1-title{
+     margin-top: 16px;
+     margin-bottom: 32px;
+     font-size: 24px;
+ }
+
+ .div-info{
+     margin: 0;
+     padding-left: 40%;
+ }
+ 
+ 
