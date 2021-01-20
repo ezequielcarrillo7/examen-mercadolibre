@@ -49,7 +49,7 @@ const Detail = (props) => {
                     <div className="div-info">
                         <p className='p-condicion'>{item.condition === 'new' ? 'Nuevo' : 'Usado'} - {item.sold_quantity} vendidos</p>
                         <h1 className="h1-title">{item.title}</h1>
-                        <h2 className="h2-price">{price.currency} {price.amount}{price.decimals === 0 ? '.0' : parseFloat(price.decimals).toFixed(2)}</h2>
+                        <h2 className="h2-price">{price.currency === 'ARS' ? '$ ' : 'U$S '} {price.amount}{price.decimals === 0 ? '.0' : parseFloat(price.decimals).toFixed(2)}</h2>
                     </div>
                     <div className="div-btn">
                         <button className="btn-comprar">Comprar</button>
