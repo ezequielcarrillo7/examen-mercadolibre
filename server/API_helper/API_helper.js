@@ -1,6 +1,5 @@
 const request = require("request");
 
-
 //La funcion make_API_call retorna una promesa que se resuelve (resolve) o deniega (reject) basado en el resultado desde la API.
 //La opcion {json:true} en la funcion request convierte el resultado en un objeto JSON.
 

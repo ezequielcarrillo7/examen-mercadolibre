@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import './Item.css'
+import {Link} from 'react-router-dom'
 
 import FreeShipping from '../assets/ic_shipping.png'
 
@@ -22,19 +23,29 @@ const ContenedorItem = styled.div`
 const Item = ({data}) => {
     
     return (
+        
         <ContenedorItem>
+           
             <div className='div-container'>
+                
                 <div className="div-img">
-                    <ImgItem src={data.picture}></ImgItem>
+                    <Link to={{pathname: `/items/${data.id}`, data: data}}>
+                        <ImgItem src={data.picture}></ImgItem>
+                    </Link>
                 </div>
-                <div className='div-info'>
+                
+                
+                <div className='div-item-info'>
                     <div className="div-price">
-                    <p className='p-price'>{data.price.currency === 'ARS' ? '$ ' : 'U$S '}{data.price.amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}<span>{data.price.decimals ? data.price.decimals > 0 : null}</span></p><span className="span-shipping">{data.free_shipping ? <img src={FreeShipping} alt='Envio Gratuito'></img> : null}</span> 
-                        
+                    <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to={{pathname: `/items/${data.id}`, data: data}}>
+                        <p className='p-price'>{data.price.currency === 'ARS' ? '$ ' : 'U$S '}{data.price.amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}<span>{data.price.decimals ? data.price.decimals > 0 : null}</span></p><span className="span-shipping">{data.free_shipping ? <img src={FreeShipping} alt='Envio Gratuito'></img> : null}</span> 
+                    </Link>    
                     </div>
                     
-                    <div className='div-description'>
-                        <p className="p-description">{data.title}</p>
+                    <div className='div-item-description'>
+                        <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to={{pathname: `/items/${data.id}`, data: data}}>
+                            <p className="p-description">{data.title}</p>
+                        </Link>
                     </div>
                 </div>
 
@@ -42,8 +53,9 @@ const Item = ({data}) => {
                     <p className="p-location">{data.adress}</p>
                 </div>
             </div>
+           
         </ContenedorItem>
-       
+     
 
         
         

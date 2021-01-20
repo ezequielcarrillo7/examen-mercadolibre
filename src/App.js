@@ -1,8 +1,11 @@
 import Header from './components/Header'
 import ItemList from './components/ItemList'
 import Detail from './components/Detail'
+import Error from './components/Error'
 
-import {Route, useHistory, Switch} from 'react-router-dom';
+
+
+import {Route, useHistory, Switch, Redirect} from 'react-router-dom';
 
 import {useState} from 'react';
 
@@ -30,15 +33,21 @@ function App() {
   }
 
   return (
-    <Route>
       <div className="App">
         <Header onSubmit={searchText => getItems(searchText)}/>
         {
-          <Switch><Route path="/items" exact><ItemList categories={searchResults.categories} list={searchResults.items}/></Route></Switch>
+          <Switch>
+            <Route path="/items" exact>
+              {
+                searchResults.error ? <Error></Error> : searchResults.items ? <ItemList categories={searchResults.categories} list={searchResults.items}/>
+                : <Redirect to={"/"}/>
+              }
+              
+            </Route>
+            <Route path="/items/:id" component={Detail} />
+          </Switch>
         }
-        {/* <Detail></Detail> */}
       </div>
-    </Route>
   );
 }
 

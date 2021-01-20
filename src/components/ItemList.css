@@ -6,6 +6,12 @@
     flex-wrap: wrap;
     gap: 0px;
 }
+ @media (max-width: 360px) {
+    .div-breadcrumb{
+        justify-content: center;
+    }
+        
+    }
 
 .p-breadcrumb{
     color:#3333336b;

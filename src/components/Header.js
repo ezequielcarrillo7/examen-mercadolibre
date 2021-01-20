@@ -29,7 +29,11 @@ const FormBusqueda = styled.form`
 const ContenedorLogo = styled.div`
     display:flex;
     padding-right: 2rem;
-`;
+
+    @media (max-width: 360px) {
+        display: none;
+    }
+`
 
 const InputSearch = styled.input`
     background-color:#fff;

@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+# Mercado Libre Front End Challenge - Ezequiel Carrillo 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+La aplicación está dividida en dos partes principales: Cliente y Servidor.
 
-## Available Scripts
+El lado del Cliente fue creado con React utilizando create-react-app para generar la estructura base del proyecto de manera sencilla, para el Routing de la misma utilicé
+React Router, además utilicé la libreria "Emotion" para crear algunos Styled Components. El Spinner que se muestra antes de cargar el detalle de un Item fue creado gracias a SpinKit (https://tobiasahlin.com/spinkit/), elegí esta colección de Spinners personalizables para evitar crear uno desde cero.
 
-In the project directory, you can run:
+El lado del Servidor utiliza NodeJS y Express, allí instalé la dependencia "nodemon" para evitar reiniciar el servidor cada vez que realizaba un cambio.
+Este fue construido en 3 capas distintas:
+-   API_helper.js (En esta capa se consumen los endpoints necesarios de la API de Mercado Libre mediante una función principal que retorna una Promesa.)
+-   service.js (Toma las respuestas obtenidas en API_helper y construye los objetos utilizados en la aplicación.)
+-   app.js (Allí están construidos los endpoints que utiliza el Front End. En cada uno de ellos se consume su respectiva funcion llamando al Service.)
 
-### `npm start`
+# Pasos para correr la aplicación
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Ejecutar el comando npm install para instalar las dependencias utilizadas en el proyecto.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. Levantar el cliente en la raiz del proyecto con el comando npm start.
 
-### `npm test`
+3. Levantar el servidor dentro del directorio "server" con el comando npm run server.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
